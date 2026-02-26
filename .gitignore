@@ -1,0 +1,17 @@
+# Database and secrets - never commit these
+excalibur.db
+.enc_key
+*.pyc
+__pycache__/
+*.db
+
+# Python environment
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,7 @@
+-e flask>=3.0.0
+werkzeug>=3.0.0
+cryptography>=40.0.0
+Pillow>=10.0.0
+gunicorn>=21.2.0
+# qrcode[pil]>=7.4.0
+# pyotp>=2.9.0

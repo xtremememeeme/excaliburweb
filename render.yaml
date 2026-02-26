@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: excalibur-tours
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    disk:
+      name: excalibur-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FERNET_KEY
+        sync: false          # you'll paste this in the Render dashboard
+      - key: RENDER_DB_PATH
+        value: /data/excalibur.db
+      - key: PYTHON_VERSION
+        value: 3.11.0
